@@ -30,12 +30,40 @@ npm install
 
 ## Usage
 
+Navigate to the src folder
+```bash
+cd ./src
+```
+
+### Sending Emails
+
+To send an email:
+
+```bash
+node step_1_0_send_email.js --from 544@coruptiaucide.com --to baditaflorin@gmail.com --subject "Subject" --body "Body of the email"
+```
+
+### Bulk Email Sender
+
+To send emails in bulk from a JSON file:
+
+```bash
+node step_1_1_bulkEmailSender.js --file <path_to_json_file> --subject "Subject" --body <path_to_body_file> --from <from_email>
+```
+
+
 ### Reading Emails
 
 To read emails from a specified email address:
 
 ```bash
-node step_1_0_read_emails.js --email <email_address> --max <number_of_emails> --download
+node step_3_0_read_emails.js --email <email_address> --max <number_of_emails> --download
+```
+
+To read emails from a specified email address and save to a file:
+
+```bash
+node step_3_0_read_emails.js --email <email_address> --max <number_of_emails> --download
 ```
 
 ### Adding Emails to Database
@@ -46,28 +74,12 @@ To add the fetched emails to the database:
 curl -X POST -H "Content-Type: application/json" --data-binary "@response_read_emails.json" http://localhost:3000/add-emails
 ```
 
-### Sending Emails
+### Identify unanswered emails by subject
 
-To send an email:
-
-```bash
-node step_2_0_send_email.js --from <from_email> --to <to_email> --subject "Subject" --body "Body of the email"
-```
-
-### Bulk Email Sender
-
-To send emails in bulk from a JSON file:
+To find emails that are not in the database but are present in a JSON file of emails you have send:
 
 ```bash
-node step_2_1_bulkEmailSender.js --file <path_to_json_file> --subject "Subject" --body <path_to_body_file> --from <from_email>
-```
-
-### Finding Emails Not in Database
-
-To find emails that are not in the database but are present in a JSON file:
-
-```bash
-node step_2_2_find_emails_not_in_database.js --subject "Subject" --file <path_to_json_file>
+node step_2_2_identify_unanswered_emails_by_subject.js --subject "Subject" --file <path_to_json_file>
 ```
 
 ## Scripts
