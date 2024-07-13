@@ -30,6 +30,20 @@ npm install
 
 ## Usage
 
+### Pre-requirements 
+You need to setup a Google Service Account
+https://cloud.google.com/iam/docs/service-accounts-create
+
+Create a new Project
+
+https://console.cloud.google.com/home/dashboard?project=autocereri544&authuser=8
+
+To get the permissions that you need to create service accounts, ask your administrator to grant you the Create Service Accounts (roles/iam.serviceAccountCreator) IAM role on the project.
+
+Download the json file that you will generate and add it to ./src/config/service_account.json
+
+## Running the scripts
+
 Navigate to the src folder
 ```bash
 cd ./src
@@ -40,7 +54,7 @@ cd ./src
 To send an email:
 
 ```bash
-node step_1_0_send_email.js --from 544@coruptiaucide.com --to baditaflorin@gmail.com --subject "Subject" --body "Body of the email"
+node step_1_0_send_email.js --from <email_address> --to <email_address> --subject "Subject" --body "Body of the email"
 ```
 
 ### Bulk Email Sender
@@ -50,7 +64,6 @@ To send emails in bulk from a JSON file:
 ```bash
 node step_1_1_bulkEmailSender.js --file <path_to_json_file> --subject "Subject" --body <path_to_body_file> --from <from_email>
 ```
-
 
 ### Reading Emails
 

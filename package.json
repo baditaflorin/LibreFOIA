@@ -2,11 +2,19 @@
   "dependencies": {
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
+    "csv-parser": "^3.0.0",
+    "exceljs": "^4.4.0",
     "express": "^4.19.2",
+    "fs-extra": "^11.2.0",
     "googleapis": "^140.0.1",
+    "jimp": "^0.22.12",
+    "mammoth": "^1.8.0",
     "markdown-it": "^14.1.0",
+    "pdf-lib": "^1.17.1",
+    "pdf-parse": "^1.1.1",
     "sequelize": "^6.37.3",
     "sqlite3": "^5.1.7",
+    "textract": "^2.5.0",
     "winston": "^3.13.0",
     "yargs": "^17.7.2"
   }
